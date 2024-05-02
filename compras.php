@@ -235,6 +235,7 @@ switch ($accion) {
           <th colspan="3">
           <form method="post">
           <input type="submit" name="accion" value="Comprar" class= "btn-pr" />
+
           </form>
           </th>
 
