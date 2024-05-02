@@ -1,0 +1,17 @@
+body{
+    background-size: cover;
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+}
+*{
+    box-sizing: border-box;
+}
+.footer{
+    background-color: #0a1551;
+    padding: 1em 0;
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    color: rgb(252, 252, 252);
+}

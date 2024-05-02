@@ -1,0 +1,18 @@
+
+
+.table{
+    position: relative;
+    left: 240px;
+    margin-top: -40px;
+    background-color: #ffffff;
+    border-color:  #321f4e;
+
+}
+
+
+.imp{
+    background-color: #e1cdff;
+    border-color: transparent;
+    color: black;
+    height: 15px;
+}

@@ -1,0 +1,42 @@
+.form-group#id-group::before{
+    content: "\f2bb";
+}
+
+
+.form-group#user-group::before{
+    content: "\f007";
+}
+
+.form-group#fecha-group::before{
+    content: "\f073";
+}
+
+.form-group#ciudad-group::before{
+    content: "\f0f8";
+}
+
+.form-group#contrasena-group::before{
+    content: "\f023";
+}
+
+.form-group#edad-group::before{
+    content: "\f059";
+}
+.form-group#celuco-group::before{
+    content: "\f0f3";
+}
+.form-group#home-group::before{
+    content: "\f1ad";
+}
+.form-group#direccion-group::before{
+    content: "\f1ad";
+}
+.form-group#correo-group::before{
+    content: "\f0e0";
+}
+.form-group#nit-group::before{
+    content: "\f0fc";
+}
+.form-group#contrasena-group::before{
+    content: "\f11c";
+}
