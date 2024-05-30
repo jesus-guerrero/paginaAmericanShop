@@ -72,75 +72,45 @@ switch ($accion) {
 <link rel="stylesheet" href="ventana.js">
 
 
+<!-- <style>
 
-<!-- <div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Título de la tarjeta</h3>
-    <button type="button" class="btn-close" aria-label="Cerrar"></button>
-  </div>
-  <div class="card-body">
-    <p>Contenido de la tarjeta aquí.</p>
-  </div>
-</div>
-
-<script>
-  // Selecciona el botón de cierre
-  const closeButton = document.querySelector(".btn-close");
-
-  // Agrega un evento click al botón de cierre
-  closeButton.addEventListener("click", function() {
-    // Selecciona la tarjeta
-    const card = closeButton.closest(".card");
-    // Cierra la tarjeta
-    card.style.display = "none";
-  });
-</script> -->
+.product-container {
+    height: 1600px; /* Ajusta esta altura según sea necesario */
+    position: relative;
+    right: -400px;
+    width: 900px;
+    overflow-y: auto;
+    padding-right: 15px; /* Para evitar el solapamiento del contenido con la barra de desplazamiento */
+    padding-left: 150px ;
+    right: 510px;
+    align-items: center;
+}
+</style> -->
 
 
-<div class="row">
-
-  <?php  foreach($listaProductos as $producto)  { ?>
-      <div class="card mb-3" style="width: 18rem;">
-        <img class="card-img-top" src="img/<?php echo $producto['imagen']; ?> "width ="130" height="200" alt="" srcset=""
-        style="border-image: 30px;
-                max-width: 210px;
-                max-height: 180px;">
-
-
-        <div class="card-body">
-          <h5 class="card-title"><?php echo $producto['nombre']; echo" "; echo $producto['descripcion'];?> </h5>
-          <h5 class="card-title">Precio: $<?php echo $producto['precio']; ?> </h5>
-          <h6 class="card-title">Cod. Producto: <?php echo $producto['codigo']; ?> </h6>
-
-
-          <form method="post">
-
-            <input type="hidden" name="txtCod" id="txtCod" value="<?php echo $producto['codigo']; ?>" />
-            <input type="hidden" name="txtNombre" id="txtNombre" value="<?php echo $producto['nombre']; ?>" />
-            <input type="hidden" name="txtDescripcion" id="txtDescripcion" value="<?php echo $producto['descripcion']; ?>" />
-            <input type="hidden" name="txtPrecio" id="txtPrecio" value="<?php echo $producto['precio']; ?>" />
-            <input type="hidden" name="txtImg" id="txtImg" value="<?php echo $producto['imagen']; ?>" />
-
-
-
-            <!-- <form method='POST'class="col-12" th:action="@{/login}" > -->
-            <button type="submit" name="accion" value="Añadir" class="btn-pr">Añadir al carrito</button>
-          </form>
-
-          <style>
-                .card:hover {
-                transform: scale(1.1);
-                transition: all 0.3s ease;
-                }
-                </style>
-
+<div class="product-container">
+    <div class="row">
+      <?php foreach($listaProductos as $producto) { ?>
+        <div class="card mb-3" style="width: 18rem;">
+          <img class="card-img-top" src="img/<?php echo $producto['imagen']; ?> " width="130" height="200" alt="" srcset=""
+               style="border-image: 30px; max-width: 210px; max-height: 180px;">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $producto['nombre']; echo " "; echo $producto['descripcion']; ?> </h5>
+            <h5 class="card-title">Precio: $<?php echo $producto['precio']; ?> </h5>
+            <h6 class="card-title">Cod. Producto: <?php echo $producto['codigo']; ?> </h6>
+            <form method="post">
+              <input type="hidden" name="txtCod" id="txtCod" value="<?php echo $producto['codigo']; ?>" />
+              <input type="hidden" name="txtNombre" id="txtNombre" value="<?php echo $producto['nombre']; ?>" />
+              <input type="hidden" name="txtDescripcion" id="txtDescripcion" value="<?php echo $producto['descripcion']; ?>" />
+              <input type="hidden" name="txtPrecio" id="txtPrecio" value="<?php echo $producto['precio']; ?>" />
+              <input type="hidden" name="txtImg" id="txtImg" value="<?php echo $producto['imagen']; ?>" />
+              <button type="submit" name="accion" value="Añadir" class="btn-pr">Añadir al carrito</button>
+            </form>
+          </div>
         </div>
-      </div>
-
-  <?php } ?>
-
-</div>
-
+      <?php } ?>
+    </div>
+  </div>
 
 
 
