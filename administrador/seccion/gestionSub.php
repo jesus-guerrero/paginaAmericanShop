@@ -221,9 +221,9 @@ switch ($accion) {
         
 }
 
-$sentenciaSQL=$conexion->prepare("SELECT * FROM subsidios");
-$sentenciaSQL->execute();
-$listaSubsidios=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
+// $sentenciaSQL=$conexion->prepare("SELECT * FROM subsidios");
+// $sentenciaSQL->execute();
+// $listaSubsidios=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 //para los productos comercial
 $sentenciaSQL=$conexion->prepare("SELECT * FROM productos");
