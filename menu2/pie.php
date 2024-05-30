@@ -25,39 +25,15 @@
                     <!-- Content -->
 					<br/><br/>
                     <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fa-solid fa-bolt"></i>  K.U.TIN
+                        <i class="fa-solid fa-shirt"></i> American Shop
                     </h6>
                     <p>
-					Llevar soluciones de última tecnología para su hogar o empresa, en productos electrónicos, de audio, iluminación y electronica.
+					Tienda de ropa que encarna el espíritu y la diversidad del estilo americano. Nuestra colección está cuidadosamente seleccionada para ofrecerte lo mejor de la moda.
                     </p>
                     <p>
                     </p>
                 </div>
                 <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-					<br/><br/>
-                    <h6 class="text-uppercase fw-bold mb-4">
-						
-                        Herramientas
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Boostrap</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Php</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Html</a>
-                    </p>
-                    <!-- <p>
-                        <a href="#!" class="text-reset">Css</a>
-                    </p> -->
-                </div>
-                <!-- Grid column -->
-
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
                     <!-- Links -->
@@ -66,29 +42,47 @@
                         Nuestro Equipo
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Jhonatan Rosas</a>
+                        <class="text-reset">Jorge Rojas</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Jesus Guerrero</a>
+                        <class="text-reset">Jesus Guerrero</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Alcides Cortes</a>
+                        <class="text-reset">Andres Muñoz</a>
                     </p>
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="font-size 12px">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="font-size: 17px">
                     <!-- Links -->
-					<br/><br/>
-                    <h6 class="text-uppercase fw-bold mb-4">Contactos</h6>
-                    <p><i class="fas fa-home me-3"></i>Cr 16 </p>
+                    <br/><br/>
+                    <h6 class="fw-bold mb-4">CONTACTOS</h6>
                     <p>
-                        <i class="fas fa-envelope me-3"></i>devsoft@gmail.com
+                        <a href="https://maps.app.goo.gl/9D5aREHMCP4ESL6w5">
+                            <i class="fa-solid fa-map-pin"></i> Carrera 26#16-59 Centro
+                        </a>
                     </p>
-                    <p><i class="fas fa-phone me-3"></i> + 57 315 234 567 88</p>
+                    <p>
+                        <a href="https://www.instagram.com/londonropamericana?igsh=MXhreWs3bGVieTFsbg==">
+                            <i class="fa-brands fa-instagram"></i> @londonropamericana
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone me-3"></i>315 234 5678
+                    </p>
                     <!-- <p><i class="fas fa-print me-3"></i> + 57 312 234 567 89</p> -->
                 </div>
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+					<br/><br/>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1677.1347278422363!2d-77.28064123550877!3d1.2151172874983198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed5b27ebed909%3A0x3de8cca770ec2f4d!2sLONDON%20TIENDA%20DE%20ROPA%20AMERICANA!5e0!3m2!1ses!2sco!4v1717027618871!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Grid column -->
+
+                
                 <!-- Grid column -->
             </div>
             <!-- Grid row -->
