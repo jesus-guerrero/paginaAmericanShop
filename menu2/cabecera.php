@@ -67,10 +67,10 @@ switch ($accion ) {
 				</div>
 
 				<div class="contenedor contenedor-enlaces-nav">
-					<div class="btn-departamentos" id="btn-departamentos" style="font-size: 1.2em">
+					<!-- <div class="btn-departamentos" id="btn-departamentos" style="font-size: 1.2em">
 						<p>Todos los <span>Productos</span></p>
 						<i class="fas fa-caret-down"></i>
-				</div>
+				</div> -->
 
 				
 				
