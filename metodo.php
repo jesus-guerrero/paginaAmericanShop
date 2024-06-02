@@ -11,11 +11,6 @@ $sentenciaSQL->execute();
 $listaP=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 
-$sentenciaSQL=$conexion->prepare("SELECT * FROM productos");
-$sentenciaSQL->execute();
-$listaP=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-
-
 
 $servername = "localhost";
 $username = "root";
@@ -26,21 +21,11 @@ $accion=(isset($_POST['accion']))?$_POST['accion']:"";
 
 switch ($accion) {
     case "Comprar":
-        // echo "si";
-        // $txtComprares="Compra realizada con exito";
-        // $txtResul=0;
-        // $sentenciaSQL=$conexion->prepare("DELETE FROM listaProductos");
-        // $sentenciaSQL->execute(); 
-
-        // Disminuir unidades en 1
-        $sentenciaSQL = $conexion->prepare("UPDATE productos SET unidades = unidades - 1 WHERE codigo = :codigo AND unidades > 0");
-        $sentenciaSQL->bindParam(':codigo', $txtCod2);
-        $sentenciaSQL->execute();
-        // Eliminar el producto de la lista de productos
-        $sentenciaSQL = $conexion->prepare("DELETE FROM listaProductos WHERE id = :codigo");
-        $sentenciaSQL->bindParam(':codigo', $txtCod2);
-        $sentenciaSQL->execute();
-
+        echo "si";
+        $txtComprares="Compra realizada con exito";
+        $txtResul=0;
+        $sentenciaSQL=$conexion->prepare("DELETE FROM listaProductos");
+        $sentenciaSQL->execute(); 
        header("Location:compras.php");
       break;
   
@@ -133,7 +118,7 @@ switch ($accion) {
 
         <div class="card" style="width: 700px; height:200px">
                 <div class="card-body">
-                    <h4 class="card-title">Total Productos: </h4>
+                    <h4 class="card-title">Total Productos: 4</h4>
                     <h4 class="card-text"><?php echo $txtSuma ?>$</h4>
                     <form method="post">
                     <input type="submit" name="accion" value="Comprar" class= "btn btn-primary" />
