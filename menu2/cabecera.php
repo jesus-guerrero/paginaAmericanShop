@@ -56,7 +56,7 @@ switch ($accion ) {
 
 		<title>Menu de Navegacion </title>
 	</head>
-	<body  style="background-image: url(img/fondopag4.jpg);">
+	<body  style="background-image: url(img/fondopagina2.webp);">
 	
 		<nav class="menu" id="menu">
 		
@@ -90,7 +90,7 @@ switch ($accion ) {
 
 				<div class="logo">
 					<img width="80" src="img\transparente.png" style="border-radius: 25px;" alt="">		
-					<img width="165" height="90" src="img\kuf.png" style="border-radius: 25px;" alt="">		
+					<img width="160" height="87" src="img\londonLogo.png" style="border-radius: 700px;" alt="">		
 				</div>
 
 				<div class="enlaces" >

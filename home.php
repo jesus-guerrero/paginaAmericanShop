@@ -27,7 +27,7 @@ $accion=(isset($_POST['accion']))?$_POST['accion']:"";
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img width="1000" height="200" src="img\bannerprb2.png" class="d-block w-100" alt="...">
+            <img width="1000" height="200" src="img\londonimg2.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
             <img width="1000" height="200" src="menu2\imgmenu\leds.jpeg" class="d-block w-100" alt="...">
