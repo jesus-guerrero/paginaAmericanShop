@@ -188,7 +188,7 @@ switch ($accion) {
 <script src="https://widget.chatbot.com/loader.js" async></script>
 <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
-    window.__be = window.__be || {};
+    window._be = window._be || {};
     window.__be.id = "6650d7a0ff4e340007f0eed8";
     (function() {
         var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
@@ -200,4 +200,3 @@ switch ($accion) {
 <!-- End of ChatBot code -->
 </body>
 </html>
-
