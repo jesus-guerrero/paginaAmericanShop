@@ -16,6 +16,20 @@ $accion = $_POST['accion'] ?? "";
 $priceRanges = $_POST['priceRange'] ?? [];
 
 
+
+switch ($accion) {
+    case "Añadir":
+  
+      header("Location:compras.php");
+      break;
+    case"Borrar":
+      header("Location:compras.php");
+      break;
+    case "Comprar":
+      header("Location:metodo.php");
+        break;
+}
+
 // Construcción de la consulta SQL con filtro de precio
 $priceConditions = [];
 foreach ($priceRanges as $range) {
@@ -41,12 +55,15 @@ if (!empty($priceConditions)) {
 }
 
 
+$sql1 = "SELECT * FROM productos";
+
 
 
 
 $sentenciaSQL = $conexion->prepare($sql);
 $sentenciaSQL->execute();
 $listaProductos = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 
@@ -171,7 +188,7 @@ switch ($accion) {
 <script src="https://widget.chatbot.com/loader.js" async></script>
 <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
-    window.__be = window.__be || {};
+    window._be = window._be || {};
     window.__be.id = "6650d7a0ff4e340007f0eed8";
     (function() {
         var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
@@ -183,4 +200,3 @@ switch ($accion) {
 <!-- End of ChatBot code -->
 </body>
 </html>
-
