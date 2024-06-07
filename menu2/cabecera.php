@@ -78,11 +78,11 @@ switch ($accion ) {
 				<div class="cont-busqueda">
 
 					<form action="buscar.php" method="POST">
-						<input class="form-control" type="text" value="<?php echo $txtBuscar; ?>" placeholder="Buscar" name="txtBuscar">
+						<input class="form-control" type="text" style="position: relative; left: 360px; " value="<?php echo $txtBuscar; ?>" placeholder="Buscar" name="txtBuscar">
 							<!-- <div class="btn-b">
 								<i class="fa fa-search"></i>
 							</div> -->
-						<button class="btn-b" type="submit"  name="accion" value="Buscar"><i class="fa fa-search" ></i></button>
+						<button class="btn-b" style="position: relative; left: 360px; " type="submit"  name="accion" value="Buscar"><i class="fa fa-search" ></i></button>
 						
 					</form>
 						
@@ -90,7 +90,7 @@ switch ($accion ) {
 
 				<div class="logo">
 					<img width="80" src="img\transparente.png" style="border-radius: 25px;" alt="">		
-					<img width="160" height="87" src="img\londonLogo.png" style="border-radius: 700px;" alt="">		
+					<img width="160" height="87" src="img\londonLogo.png" style="border-radius: 700px; position: relative; left: -150px;  " alt="">		
 				</div>
 
 				<div class="enlaces" >

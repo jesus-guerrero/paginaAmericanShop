@@ -16,6 +16,9 @@
     
     <!-- Section: Social media -->
 
+    
+
+
     <!-- Section: Links  -->
     <section class="" style="background-color: rgba(1,26,47,255); color: white">
         <div class="container text-center text-md-start mt-4">
@@ -76,7 +79,7 @@
                 </div>
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-6">
                     <!-- Links -->
 					<br/><br/>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1677.1347278422363!2d-77.28064123550877!3d1.2151172874983198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2ed5b27ebed909%3A0x3de8cca770ec2f4d!2sLONDON%20TIENDA%20DE%20ROPA%20AMERICANA!5e0!3m2!1ses!2sco!4v1717027618871!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -81,86 +81,39 @@ switch ($accion) {
         break;
         
     case "Modificar":
-        $sentenciaSQL=$conexion->prepare("UPDATE productos SET nombre=:nombre, descripcion=:descripcion, unidades=:unidades, precio=:precio WHERE codigo=:id " );
-        $sentenciaSQL-> bindParam(':nombre',$txtNombre);
-        $sentenciaSQL-> bindParam(':descripcion',$txtDescripcion);
-        $sentenciaSQL-> bindParam(':unidades',$txtUnidades);
-        $sentenciaSQL-> bindParam(':precio',$txtPrecio);
-        $sentenciaSQL-> bindParam(':id',$txtCod);
+        $sentenciaSQL = $conexion->prepare("UPDATE productos SET nombre=:nombre, descripcion=:descripcion, unidades=:unidades, precio=:precio WHERE codigo=:id");
+        $sentenciaSQL->bindParam(':nombre', $txtNombre);
+        $sentenciaSQL->bindParam(':descripcion', $txtDescripcion);
+        $sentenciaSQL->bindParam(':unidades', $txtUnidades);
+        $sentenciaSQL->bindParam(':precio', $txtPrecio);
+        $sentenciaSQL->bindParam(':id', $txtCod);
         $sentenciaSQL->execute();
 
         if($txtImagen != ""){
+            $fecha = new DateTime();
+            $nombreArchivo = ($txtImagen != "") ? $fecha->getTimestamp() . "_" . $_FILES["txtImagen"]["name"] : "imagen.jpg";
 
-            $fecha= new DateTime();
-            $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["txtImagen"]["name"]:"imagen.jpg";
+            $tmpImagen = $_FILES["txtImagen"]["tmp_name"];
 
+            move_uploaded_file($tmpImagen, "../../img/" . $nombreArchivo);
 
-            $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
-
-            move_uploaded_file($tmpImagen,"../../img/".$nombreArchivo);
-
-
-            $sentenciaSQL=$conexion->prepare("SELECT imagen FROM productos WHERE codigo=:id " );
-
-            $sentenciaSQL-> bindParam(':id',$txtCod);
+            $sentenciaSQL = $conexion->prepare("SELECT imagen FROM productos WHERE codigo=:id");
+            $sentenciaSQL->bindParam(':id', $txtCod);
             $sentenciaSQL->execute();
-            $subsidio=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
+            $subsidio = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
 
-            if(isset($subsidio["imagen"]) && ($subsidio["imagen"]!="imagen.jpg")){
-
-                if(file_exists("../img/".$subsidio["imagen"])){
-
-                    unlink("../img/".$subsidio["imagen"]);
+            if(isset($subsidio["imagen"]) && ($subsidio["imagen"] != "imagen.jpg")){
+                if(file_exists("../../img/" . $subsidio["imagen"])){ // Asegúrate de que la ruta sea correcta
+                    unlink("../../img/" . $subsidio["imagen"]);
                 }
             }
 
-
-
-
-            $sentenciaSQL=$conexion->prepare("UPDATE productos SET imagen=:imagen WHERE codigo=:id " );
-            $sentenciaSQL-> bindParam(':formulario',$Archivo);
-
-            $sentenciaSQL-> bindParam(':id',$txtCod);
+            $sentenciaSQL = $conexion->prepare("UPDATE productos SET imagen=:imagen WHERE codigo=:id");
+            $sentenciaSQL->bindParam(':imagen', $nombreArchivo); // Vincula el parámetro :imagen
+            $sentenciaSQL->bindParam(':id', $txtCod);
             $sentenciaSQL->execute();
         }
 
-
-
-
-        // if($txtFormulario != ""){
-
-        //     $fecha= new DateTime();
-        //     $Archivo=($txtFormulario!="")?$fecha->getTimestamp()."_".$_FILES["txtFormulario"]["name"]:"archivo.doxc";
-
-
-        //     $tmpFormulario=$_FILES["txtFormulario"]["tmp_name"];
-
-        //     move_uploaded_file($tmpFormulario,"../form/".$Archivo);
-
-
-        //     $sentenciaSQL=$conexion->prepare("SELECT formulario FROM subsidios WHERE id=:id " );
-
-        //     $sentenciaSQL-> bindParam(':id',$txtID);
-        //     $sentenciaSQL->execute();
-        //     $subsidio=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
-
-           
-
-        //     if(isset($subsidio["formulario"]) && ($subsidio["formulario"]!="archivo.doxc")){
-
-        //         if(file_exists("../form/".$subsidio["formulario"])){
-
-        //             unlink("../form/".$subsidio["formulario"]);
-        //         }
-        //     }
-
-
-        //     $sentenciaSQL=$conexion->prepare("UPDATE subsidios SET formulario=:formulario WHERE id=:id " );
-        //     $sentenciaSQL-> bindParam(':formulario',$Archivo);
-
-        //     $sentenciaSQL-> bindParam(':id',$txtID);
-        //     $sentenciaSQL->execute();
-        // }
 
 
         header("Location:gestionSub.php");
@@ -236,78 +189,62 @@ $listaProductos=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 
 <div class="col-md-4">
-
     <div class="card">
-                <div class="card-header">
-                    Datos del Producto
-                </div>
-            <div class="card-body">
-
-                <form method="POST" enctype="multipart/form-data">
-
-                    <div class = "form-group">
+        <div class="card-header">
+            Datos del Producto
+        </div>
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="form-group">
                     <label for="txtCod">ID:</label>
                     <input type="text" required readonly class="form-control" value="<?php echo $txtCod; ?>" name="txtCod" id="txtCod" placeholder="ID">
-                    </div>
+                </div>
 
-                    <div class = "form-group">
+                <div class="form-group">
                     <label for="txtNombre">Nombre:</label>
-                    <input type="text" required class="form-control" value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Nombre del Producto">
-                    </div>
+                    <input type="text" required class="form-control" value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Nombre del Producto" pattern="[A-Za-z\s]+">
+                    <small class="form-text text-muted">Solo se permiten letras.</small>
+                </div>
 
-                    <div class = "form-group">
+                <div class="form-group">
                     <label for="txtDescripcion">Descripción:</label>
-                    <input type="text" required class="form-control" value="<?php echo $txtDescripcion; ?>"  name="txtDescripcion" id="txtDescripcion" placeholder="Descripcion del Producto">
-                    </div>
+                    <input type="text" required class="form-control" value="<?php echo $txtDescripcion; ?>" name="txtDescripcion" id="txtDescripcion" placeholder="Descripcion del Producto" pattern="[A-Za-z0-9\s]+">
+                    <small class="form-text text-muted">Solo se permiten letras y números.</small>
+                </div>
 
-                    <div class = "form-group">
+                <div class="form-group">
                     <label for="txtUnidades">Unidades:</label>
-                    <input type="text" required class="form-control" value="<?php echo $txtUnidades; ?>"  name="txtUnidades" id="txtUnidadces" placeholder="Numero de unidades">
-                    </div>
+                    <input type="text" required class="form-control" value="<?php echo $txtUnidades; ?>" name="txtUnidades" id="txtUnidades" placeholder="Numero de unidades" pattern="\d+">
+                    <small class="form-text text-muted">Solo se permiten números enteros.</small>
+                </div>
 
-
-                    <div class = "form-group">
+                <div class="form-group">
                     <label for="txtPrecio">Precio:</label>
-                    <input type="text" required class="form-control" value="<?php echo $txtPrecio; ?>"  name="txtPrecio" id="txtPrecio" placeholder="Precio del producto">
-                    </div>
+                    <input type="text" required class="form-control" value="<?php echo $txtPrecio; ?>" name="txtPrecio" id="txtPrecio" placeholder="Precio del producto" pattern="\d+">
+                    <small class="form-text text-muted">Solo se permiten números enteros.</small>
+                </div>
 
-                    <div class = "form-group">
+                <div class="form-group">
                     <label for="txtImagen">Imagen:</label>
-
-
                     <br/>
-
-                    <?php if ($txtImagen !="") { ?>
-                        <img class="img-thumbnail rounded" src="../img/<?php echo $txtImagen;?> "width ="80" alt="" srcset="">
+                    <?php if ($txtImagen != "") { ?>
+                        <img class="img-thumbnail rounded" src="../img/<?php echo $txtImagen; ?>" width="80" alt="" srcset="">
                     <?php } ?>
-                    
-                    <input type="file"  class="form-control" name="txtImagen" id="txtImagen" placeholder="Imagen">
-                    </div>
+                    <input type="file" class="form-control" name="txtImagen" id="txtImagen" placeholder="Imagen">
+                </div>
 
-
-                    <div class = "form-group">
+                <div class="form-group">
                     <br/>
-                    
-                    </div>
+                </div>
 
-
-
-
-
-                    <div class="btn-group" role="group" aria-label="">
-                        <button type="submit" name="accion" <?php echo ($accion=="Seleccionar")?"disabled":"" ?> value="Agregar" class="btn btn-success">Agregar</button>
-                        <button type="submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":"" ?> value="Modificar" class="btn btn-warning">Modificar</button>
-                        <button type="submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":"" ?> value="Cancelar" class="btn btn-info">Cancelar</button>
-                    </div>
-
-                </form>
-
-            </div>
-      
+                <div class="btn-group" role="group" aria-label="">
+                    <button type="submit" name="accion" <?php echo ($accion=="Seleccionar")?"disabled":"" ?> value="Agregar" class="btn btn-success">Agregar</button>
+                    <button type="submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":"" ?> value="Modificar" class="btn btn-warning">Modificar</button>
+                    <button type="submit" name="accion" <?php echo ($accion!="Seleccionar")?"disabled":"" ?> value="Cancelar" class="btn btn-info">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </div>
-
-    
-    
 </div>
 
 <div class="col-md-8">
