@@ -185,7 +185,7 @@ switch ($accion) {
 <script src="https://widget.chatbot.com/loader.js" async></script>
 <!-- Start of ChatBot (www.chatbot.com) code -->
 <script type="text/javascript">
-    window._be = window._be || {};
+    window.__be = window.__be || {};
     window.__be.id = "665de26400047f000720baa3";
     (function() {
         var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
@@ -194,12 +194,13 @@ switch ($accion) {
     })();
 </script>
 <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-<!-- End of ChatBot code -->
+<!-- End of ChatBot code -->
+
+</body>
+</html>
 
 <?php include("menu2/pie.php"); ?>
 
 
 
 
-</body>
-</html>
